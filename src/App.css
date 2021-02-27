@@ -2,3 +2,9 @@
     display: grid;
     grid-template-columns: repeat(4, 25%);
 }
+.not-active{
+    opacity: 0;
+}
+.city1{
+    opacity: 1;
+}

@@ -12,6 +12,7 @@ function City1({
   currentTemp,
   getDescription,
   getIcon,
+  
 }) {
   return (
     <div className="list">
@@ -42,15 +43,8 @@ function City1({
           </p>
         </div>
       </div>
-      {/* <div className="forecast">
-        <ul>
-          <li> <img className="icon-forecast" src={getIcon(getDescription(1))} alt="weather_icon" /> {currentTemp(1)}°c</li>
-          <li> <img className="icon-forecast" src={getIcon(getDescription(2))} alt="weather_icon" /> {currentTemp(2)}°c</li>
-          <li> <img className="icon-forecast" src={getIcon(getDescription(3))} alt="weather_icon" /> {currentTemp(3)}°c</li>
-          <li> <img className="icon-forecast" src={getIcon(getDescription(4))} alt="weather_icon" /> {currentTemp(4)}°c</li>
-          <li> <img className="icon-forecast" src={getIcon(getDescription(5))} alt="weather_icon" /> {currentTemp(5)}°c</li>
-        </ul>
-      </div> */}
+
+      
     </div>
   );
 }
