@@ -1,7 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* #B8E0F6 #A4CCE3 #37667E #DEC4D6 #7B92AA */
+/* #C2D9E1 #D29F8C #D9D3D2 #81B1CC #FFD9CF */
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    color:white;
+  
+}
+input{
+    
+    box-shadow:none;
+}
+
+input:focus, textarea:focus, button:focus{
+    outline:none;
+}
 .App{
+    width: 70%;
+    margin: 15vh auto;
     display: grid;
     grid-template-columns: repeat(4, 25%);
+    grid-gap: 2rem;
+    justify-items: center;
+    height: 70vh;
+
 }
 .not-active{
     visibility: hidden;
+}
+
+.city1, .city2, .city3, .city4{
+    /* height: 20vh; */
+    display: grid;
+    grid-template-rows: 20% 70% 10%;
+    align-items: center;
+    /* grid-gap: .5rem; */
+}
+
+.city1-display,.city2-display,.city3-display,.city4-display{
+    display: grid;
+    grid-template-rows: 10% 90%;
+    border-radius: 8px;
+    padding: 1.5rem ;
+
+}
+
+.input-city1, .input-city2, .input-city3, .input-city4{
+    border: none;
+    border-bottom: 1px solid white;
+    padding: .2rem;
+    margin: 0 .5rem;
+    max-width: 50%;
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+}
+
+.btn-city1, .btn-city2, .btn-city3, .btn-city4{
+
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: .2rem .5rem;
+   
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+
+}
+.btn-city1:hover, .btn-city2:hover, .btn-city3:hover, .btn-city4:hover{
+    opacity: .5;
+}
+
+
+
+.input-city1, .city1-display, .btn-city1{
+    background-color: #81B1CC;
+}
+.input-city2, .city2-display, .btn-city2{
+    background-color: #a9c6cf;
+}
+.input-city3, .city3-display, .btn-city3{
+    background-color: #cabbb9;
+}
+.input-city4, .city4-display, .btn-city4{
+    background-color: #ffc7b9;
+}
+
+
+.current-temp{
+    font-size: 3rem;
+    font-weight: 550;
+}
+.temp-range{
+    display: grid;
+    grid-template-columns: 50% 50%;
 }

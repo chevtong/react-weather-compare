@@ -35,6 +35,8 @@ function App() {
   const [detailWeather, setDetailWeather] = useState({});
 
   const getCityWeather = async (cityNumber) => {
+
+    try {
     let cityName;
 
     if (cityNumber === 1) {
@@ -47,24 +49,25 @@ function App() {
       cityName = city4;
     }
 
-    const respon = await fetch(
-      `https://api.weatherbit.io/v2.0/forecast/daily?city=${cityName}&key=${APP_KEY}`
-    );
-    const data = await respon.json();
-
-    if (cityNumber === 1) {
-      setCity1Weather(data);
-    } else if (cityNumber === 2) {
-      setCity2Weather(data);
-    } else if (cityNumber === 3) {
-      setCity3Weather(data);
-    } else if (cityNumber === 4) {
-      setCity4Weather(data);
-    }
-
    
-  };
+      const respon = await fetch(
+        `https://api.weatherbit.io/v2.0/forecast/daily?city=${cityName}&key=${APP_KEY}`
+      );
+      const data = await respon.json();
 
+      if (cityNumber === 1) {
+        setCity1Weather(data);
+      } else if (cityNumber === 2) {
+        setCity2Weather(data);
+      } else if (cityNumber === 3) {
+        setCity3Weather(data);
+      } else if (cityNumber === 4) {
+        setCity4Weather(data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     getCityWeather(1);
@@ -102,7 +105,7 @@ function App() {
 
   const getIcon = (description) => {
     if (description.includes("clouds")) {
-      return clouds;
+      return snow;
     } else if (description.includes("Thunderstorm")) {
       return lightening;
     } else if (description.includes("rain")) {
@@ -159,8 +162,6 @@ function App() {
           getIcon={getIcon}
           showDetails={showDetails}
           getShowDetails={getShowDetails}
-          //updateCity={updateCity}
-          //cityInput={cityInput}
         />
       ) : (
         <img src={spinner} alt="loading..." />
@@ -180,8 +181,6 @@ function App() {
           getIcon={getIcon}
           showDetails={showDetails}
           getShowDetails={getShowDetails}
-          //updateCity={updateCity}
-          //cityInput={cityInput}
         />
       ) : (
         <img src={spinner} alt="loading..." />
@@ -201,8 +200,6 @@ function App() {
           getIcon={getIcon}
           showDetails={showDetails}
           getShowDetails={getShowDetails}
-          // updateCity={updateCity}
-          // cityInput={cityInput}
         />
       ) : (
         <img src={spinner} alt="loading..." />
@@ -222,8 +219,6 @@ function App() {
           getIcon={getIcon}
           showDetails={showDetails}
           getShowDetails={getShowDetails}
-          // updateCity={updateCity}
-          // cityInput={cityInput}
         />
       ) : (
         <img src={spinner} alt="loading..." />

@@ -23,8 +23,8 @@ function List({
     }
 
   return (
-    <div className="details">
-        <button onClick={getHome}>
+    <div className="details" onClick={getHome}>
+        <button >
         <i className="fas fa-undo-alt"></i>
         </button>
 
