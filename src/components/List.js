@@ -13,7 +13,8 @@ function List({
   showDetails,
   setShowDetails,
   detailWeather,
-  setDetailWeather
+  setDetailWeather,
+
 }) {
 
     const getHome = () =>{
@@ -26,6 +27,10 @@ function List({
         <button onClick={getHome}>
         <i className="fas fa-undo-alt"></i>
         </button>
+
+        
+
+
       <h2>{detailWeather.city_name}</h2>
       <Clock
         format={"HH:mm"}

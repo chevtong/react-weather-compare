@@ -1,21 +1,55 @@
-import React from "react";
+import React,{useRef} from "react";
 
 import Clock from "react-live-clock";
 
 function City1({
-  city1,
   setCity1,
   city1Weather,
+  setCity1Weather,
   localTimezone,
   highestTemp,
   lowestTemp,
   currentTemp,
   getDescription,
   getIcon,
-  
+  getShowDetails,
+  showDetails,
+  //updateCity,
+  //cityInput
 }) {
+
+  const cityInput = useRef();
+
+  const updateCity = (e) => {
+    e.preventDefault()
+
+    const newCity = cityInput.current.value;
+
+    if (newCity === "") return;
+    console.log(newCity);
+
+  
+      setCity1Weather({});
+      setCity1(newCity);
+   
+
+    cityInput.current.value = "";
+  };
+
+
   return (
-    <div className="list">
+    <div>
+        <form>
+        <input ref={cityInput} type="text"/>
+        <button onClick={(e)=>updateCity(e)} type="submit">Change</button>
+        </form>
+      
+
+    <div 
+    onClick={()=>getShowDetails(city1Weather)} 
+    className={showDetails?"not-active":"city1"}
+    >
+      
       <h2>{city1Weather.city_name}</h2>
       <Clock
         format={"HH:mm"}
@@ -46,7 +80,8 @@ function City1({
 
       
     </div>
+    </div>
   );
 }
 
-export default City1;
+export default City1

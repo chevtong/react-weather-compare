@@ -8,7 +8,7 @@ import snow from "./images/snow.png";
 import lightening from "./images/lightening.png";
 import spinner from "./images/spinner.gif";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import City1 from "./components/City1";
 import City2 from "./components/City2";
@@ -34,7 +34,8 @@ function App() {
   const [city4Weather, setCity4Weather] = useState({});
 
   const [showDetails, setShowDetails] = useState(false);
-  const [detailWeather, setDetailWeather] = useState({})
+  const [detailWeather, setDetailWeather] = useState({});
+
 
   const getCity1Weather = async (city) => {
     const respon = await fetch(
@@ -78,10 +79,16 @@ function App() {
 
   useEffect(() => {
     getCity1Weather(city1);
+  }, [city1]);
+  useEffect(() => {
     getCity2Weather(city2);
+  }, [city2]);
+  useEffect(() => {
     getCity3Weather(city3);
+  }, [city3]);
+  useEffect(() => {
     getCity4Weather(city4);
-  }, [city1, city2, city3, city4]);
+  }, [city4]);
 
   const localTimezone = (weatherData) => {
     return weatherData.timezone;
@@ -114,6 +121,8 @@ function App() {
       return sun;
     } else if (description.includes("snow")) {
       return snow;
+    } else if (description.includes("Snow")) {
+        return snow;
     } else if (description.includes("Clear")) {
       return sun;
     } else {
@@ -123,13 +132,14 @@ function App() {
 
   const getShowDetails = (weatherData) => {
     setShowDetails(showDetails ? false : true);
-    setDetailWeather(weatherData)
+    setDetailWeather(weatherData);
   };
+
+ 
 
   return (
     <div className="App">
-
-{showDetails ? (
+      {showDetails ? (
         <List
           showDetails={showDetails}
           getIcon={getIcon}
@@ -144,83 +154,93 @@ function App() {
           setDetailWeather={setDetailWeather}
         />
       ) : (
-
-        ''
+        ""
       )}
-          {typeof city1Weather.city_name != "undefined" ? (
-          <div onClick={()=>getShowDetails(city1Weather)} className={showDetails?"not-active":"city1"}>
-            <City1
-              city1={city1}
-              setCity1={setCity1}
-              city1Weather={city1Weather}
-              localTimezone={localTimezone}
-              highestTemp={highestTemp}
-              lowestTemp={lowestTemp}
-              currentTemp={currentTemp}
-              getDescription={getDescription}
-              getIcon={getIcon}
-              showDetails={showDetails}
-            />
-          </div>
-        ) : (
-          <img src={spinner} alt="loading..." />
-        )}
 
-
-
-      {typeof city2Weather.city_name != "undefined" ? (
-        <div onClick={()=>getShowDetails(city2Weather)} className={showDetails?"not-active":"city2"}>
-        <City2
-          city2={city2}
-          setCity2={setCity2}
-          city2Weather={city2Weather}
+      {typeof city1Weather.city_name != "undefined" ? (
+        <City1
+          city1={city1}
+          setCity1={setCity1}
+          city1Weather={city1Weather}
+          setCity1Weather={setCity1Weather}
           localTimezone={localTimezone}
           highestTemp={highestTemp}
           lowestTemp={lowestTemp}
           currentTemp={currentTemp}
           getDescription={getDescription}
           getIcon={getIcon}
+          showDetails={showDetails}
+          getShowDetails={getShowDetails}
+          //updateCity={updateCity}
+          //cityInput={cityInput}
         />
-        </div>
+      ) : (
+        <img src={spinner} alt="loading..." />
+      )}
+
+      {typeof city2Weather.city_name != "undefined" ? (
+        <City2
+          city2={city2}
+          setCity2={setCity2}
+          city2Weather={city2Weather}
+          setCity2Weather={setCity2Weather}
+          localTimezone={localTimezone}
+          highestTemp={highestTemp}
+          lowestTemp={lowestTemp}
+          currentTemp={currentTemp}
+          getDescription={getDescription}
+          getIcon={getIcon}
+          showDetails={showDetails}
+          getShowDetails={getShowDetails}
+          //updateCity={updateCity}
+          //cityInput={cityInput}
+        />
       ) : (
         <img src={spinner} alt="loading..." />
       )}
 
       {typeof city3Weather.city_name != "undefined" ? (
-                <div onClick={()=>getShowDetails(city3Weather)} className={showDetails?"not-active":"city3"}>
-
-        <City3
-          city3={city3}
-          setCity3={setCity3}
-          city3Weather={city3Weather}
-          localTimezone={localTimezone}
-          highestTemp={highestTemp}
-          lowestTemp={lowestTemp}
-          currentTemp={currentTemp}
-          getDescription={getDescription}
-          getIcon={getIcon}
-          
-        />
-        </div>
+        
+          <City3
+            city3={city3}
+            setCity3={setCity3}
+            city3Weather={city3Weather}
+            setCity3Weather={setCity3Weather}
+            localTimezone={localTimezone}
+            highestTemp={highestTemp}
+            lowestTemp={lowestTemp}
+            currentTemp={currentTemp}
+            getDescription={getDescription}
+            getIcon={getIcon}
+            showDetails={showDetails}
+            getShowDetails={getShowDetails}
+            // updateCity={updateCity}
+            // cityInput={cityInput}
+          />
+        
       ) : (
         <img src={spinner} alt="loading..." />
       )}
 
       {typeof city4Weather.city_name != "undefined" ? (
-                        <div onClick={()=>getShowDetails(city4Weather)} className={showDetails?"not-active":"city4"}>
-
-        <City4
-          city4={city4}
-          setCity4={setCity4}
-          city4Weather={city4Weather}
-          localTimezone={localTimezone}
-          highestTemp={highestTemp}
-          lowestTemp={lowestTemp}
-          currentTemp={currentTemp}
-          getDescription={getDescription}
-          getIcon={getIcon}
-        />
-        </div>
+        
+          <City4
+            city4={city4}
+            setCity4={setCity4}
+            city4Weather={city4Weather}
+            setCity4Weather={setCity4Weather}
+            localTimezone={localTimezone}
+            highestTemp={highestTemp}
+            lowestTemp={lowestTemp}
+            currentTemp={currentTemp}
+            getDescription={getDescription}
+            getIcon={getIcon}
+            showDetails={showDetails}
+            getShowDetails={getShowDetails}
+            // updateCity={updateCity}
+            // cityInput={cityInput}
+          />
+        
       ) : (
         <img src={spinner} alt="loading..." />
       )}
