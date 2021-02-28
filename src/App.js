@@ -8,7 +8,7 @@ import snow from "./images/snow.png";
 import lightening from "./images/lightening.png";
 import spinner from "./images/spinner.gif";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 import City1 from "./components/City1";
 import City2 from "./components/City2";
@@ -16,9 +16,7 @@ import City3 from "./components/City3";
 import City4 from "./components/City4";
 import List from "./components/List";
 
-const APP_KEY = "da9a51208d5e4403a9053883caf4d08d";
-//process.env.REACT_APP_API_KEY;
-console.log(APP_KEY);
+const APP_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [city1, setCity1] = useState("brussels");
@@ -36,58 +34,50 @@ function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [detailWeather, setDetailWeather] = useState({});
 
+  const getCityWeather = async (cityNumber) => {
+    let cityName;
 
-  const getCity1Weather = async (city) => {
+    if (cityNumber === 1) {
+      cityName = city1;
+    } else if (cityNumber === 2) {
+      cityName = city2;
+    } else if (cityNumber === 3) {
+      cityName = city3;
+    } else if (cityNumber === 4) {
+      cityName = city4;
+    }
+
     const respon = await fetch(
-      `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${APP_KEY}`
+      `https://api.weatherbit.io/v2.0/forecast/daily?city=${cityName}&key=${APP_KEY}`
     );
     const data = await respon.json();
 
-    console.log(data);
-    setCity1Weather(data);
+    if (cityNumber === 1) {
+      setCity1Weather(data);
+    } else if (cityNumber === 2) {
+      setCity2Weather(data);
+    } else if (cityNumber === 3) {
+      setCity3Weather(data);
+    } else if (cityNumber === 4) {
+      setCity4Weather(data);
+    }
+
+   
   };
 
-  const getCity2Weather = async (city) => {
-    const respon = await fetch(
-      `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${APP_KEY}`
-    );
-    const data = await respon.json();
-
-    console.log(data);
-    setCity2Weather(data);
-  };
-
-  const getCity3Weather = async (city) => {
-    const respon = await fetch(
-      `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${APP_KEY}`
-    );
-    const data = await respon.json();
-
-    console.log(data);
-    setCity3Weather(data);
-  };
-
-  const getCity4Weather = async (city) => {
-    const respon = await fetch(
-      `https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${APP_KEY}`
-    );
-    const data = await respon.json();
-
-    console.log(data);
-    setCity4Weather(data);
-  };
 
   useEffect(() => {
-    getCity1Weather(city1);
+    getCityWeather(1);
   }, [city1]);
+
   useEffect(() => {
-    getCity2Weather(city2);
+    getCityWeather(2);
   }, [city2]);
   useEffect(() => {
-    getCity3Weather(city3);
+    getCityWeather(3);
   }, [city3]);
   useEffect(() => {
-    getCity4Weather(city4);
+    getCityWeather(4);
   }, [city4]);
 
   const localTimezone = (weatherData) => {
@@ -122,7 +112,7 @@ function App() {
     } else if (description.includes("snow")) {
       return snow;
     } else if (description.includes("Snow")) {
-        return snow;
+      return snow;
     } else if (description.includes("Clear")) {
       return sun;
     } else {
@@ -134,8 +124,6 @@ function App() {
     setShowDetails(showDetails ? false : true);
     setDetailWeather(weatherData);
   };
-
- 
 
   return (
     <div className="App">
@@ -200,47 +188,43 @@ function App() {
       )}
 
       {typeof city3Weather.city_name != "undefined" ? (
-        
-          <City3
-            city3={city3}
-            setCity3={setCity3}
-            city3Weather={city3Weather}
-            setCity3Weather={setCity3Weather}
-            localTimezone={localTimezone}
-            highestTemp={highestTemp}
-            lowestTemp={lowestTemp}
-            currentTemp={currentTemp}
-            getDescription={getDescription}
-            getIcon={getIcon}
-            showDetails={showDetails}
-            getShowDetails={getShowDetails}
-            // updateCity={updateCity}
-            // cityInput={cityInput}
-          />
-        
+        <City3
+          city3={city3}
+          setCity3={setCity3}
+          city3Weather={city3Weather}
+          setCity3Weather={setCity3Weather}
+          localTimezone={localTimezone}
+          highestTemp={highestTemp}
+          lowestTemp={lowestTemp}
+          currentTemp={currentTemp}
+          getDescription={getDescription}
+          getIcon={getIcon}
+          showDetails={showDetails}
+          getShowDetails={getShowDetails}
+          // updateCity={updateCity}
+          // cityInput={cityInput}
+        />
       ) : (
         <img src={spinner} alt="loading..." />
       )}
 
       {typeof city4Weather.city_name != "undefined" ? (
-        
-          <City4
-            city4={city4}
-            setCity4={setCity4}
-            city4Weather={city4Weather}
-            setCity4Weather={setCity4Weather}
-            localTimezone={localTimezone}
-            highestTemp={highestTemp}
-            lowestTemp={lowestTemp}
-            currentTemp={currentTemp}
-            getDescription={getDescription}
-            getIcon={getIcon}
-            showDetails={showDetails}
-            getShowDetails={getShowDetails}
-            // updateCity={updateCity}
-            // cityInput={cityInput}
-          />
-        
+        <City4
+          city4={city4}
+          setCity4={setCity4}
+          city4Weather={city4Weather}
+          setCity4Weather={setCity4Weather}
+          localTimezone={localTimezone}
+          highestTemp={highestTemp}
+          lowestTemp={lowestTemp}
+          currentTemp={currentTemp}
+          getDescription={getDescription}
+          getIcon={getIcon}
+          showDetails={showDetails}
+          getShowDetails={getShowDetails}
+          // updateCity={updateCity}
+          // cityInput={cityInput}
+        />
       ) : (
         <img src={spinner} alt="loading..." />
       )}
