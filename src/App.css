@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-/* #B8E0F6 #A4CCE3 #37667E #DEC4D6 #7B92AA */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');/* #B8E0F6 #A4CCE3 #37667E #DEC4D6 #7B92AA */
 /* #C2D9E1 #D29F8C #D9D3D2 #81B1CC #FFD9CF */
 
 * {
@@ -10,7 +8,7 @@
 }
 body{
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
+            text-align: center;
     text-transform: capitalize;
     color:white;
   
@@ -23,9 +21,12 @@ input{
 input:focus, textarea:focus, button:focus{
     outline:none;
 }
+ul{
+    list-style: none;
+}
 .App{
-    width: 70%;
-    margin: 15vh auto;
+    width: 70vw;
+    margin: 12vh 12vw;
     display: grid;
     grid-template-columns: repeat(4, 25%);
     grid-gap: 2rem;
@@ -34,7 +35,7 @@ input:focus, textarea:focus, button:focus{
 
 }
 .not-active{
-    visibility: hidden;
+    display: none;
 }
 
 .city1, .city2, .city3, .city4{
@@ -62,7 +63,7 @@ input:focus, textarea:focus, button:focus{
     text-align: center;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    text-transform: capitalize;
+            text-transform: capitalize;
 }
 
 .btn-city1, .btn-city2, .btn-city3, .btn-city4{
@@ -73,7 +74,7 @@ input:focus, textarea:focus, button:focus{
    
     color: white;
     font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
+            text-transform: uppercase;
 
 }
 .btn-city1:hover, .btn-city2:hover, .btn-city3:hover, .btn-city4:hover{
@@ -98,9 +99,55 @@ input:focus, textarea:focus, button:focus{
 
 .current-temp{
     font-size: 3rem;
-    font-weight: 550;
+
 }
 .temp-range{
     display: grid;
     grid-template-columns: 50% 50%;
+}
+
+.details{
+    background-color: #D9D3D2;
+    width: 70vw;
+    margin: auto;
+    color: rgb(116, 116, 116);
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+    height: 70vh;
+    border-radius: 8px;
+
+}
+.current-weather{
+    /* align-self: center; */
+    /*TODO: check the align self, should be becoz of the forecaste too long */
+    display: grid;
+    grid-template-rows: 20% 70% 10%;
+
+}
+.btn-return{
+    background-color: transparent;
+    height: 3rem;
+    border: none;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 2rem;
+    color: #D9D3D2;
+}
+.forecast img{
+    max-width: 3rem;
+}
+.forecast-list{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px dotted rgb(116, 116, 116);
+    align-items: flex-end;
+    width: 70%;
+    margin: auto;
+    padding: .5rem;
+
+}
+.forecast-list p{
+    font-size: 1.8rem;
 }

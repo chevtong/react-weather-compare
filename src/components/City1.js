@@ -34,7 +34,9 @@ function City1({
   };
 
   return (
-    <div className="city1-display">
+    <div         className={showDetails ? "not-active" : "city1-display"}>
+
+   
       {showDetails ? (
         ""
       ) : (
@@ -48,7 +50,7 @@ function City1({
 
       <div
         onClick={() => getShowDetails(city1Weather)}
-        className={showDetails ? "not-active" : "city1"}
+        className= "city1"
       >
         <div>
           <h2>{city1Weather.city_name}</h2>
@@ -66,17 +68,15 @@ function City1({
           />
           <p>{getDescription(city1Weather, 0)}</p>
 
-          <h2 className="current-temp">{currentTemp(city1Weather, 0)} °c</h2>
+          <p className="current-temp">{currentTemp(city1Weather, 0)} °c</p>
         </div>
         <div className="temp-range">
-          <p>
-            <i className="fas fa-long-arrow-alt-up"></i>{" "}
-            {highestTemp(city1Weather)}°c
-          </p>
-          <p>
-            <i className="fas fa-long-arrow-alt-down"></i>{" "}
-            {lowestTemp(city1Weather)}°c
-          </p>
+          <h4>
+          <i className="fas fa-chevron-up"></i> {highestTemp(city1Weather)}°c
+          </h4>
+          <h4>
+          <i className="fas fa-chevron-down"></i> {lowestTemp(city1Weather)}°c
+          </h4>
         </div>
       </div>
     </div>
