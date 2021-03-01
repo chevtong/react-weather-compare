@@ -6,6 +6,10 @@ Nightmode is available for the application.
 
 [Live Demo](https://chevtong.github.io/react-weather-compare/)
 
+![](src/images/weather_app_demo.gif)
+
+<img src="src/images/weather_app_demo.gif" width="200" />
+
 ---
 ### WIP 
 
