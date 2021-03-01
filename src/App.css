@@ -1,147 +1,214 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');/* #B8E0F6 #A4CCE3 #37667E #DEC4D6 #7B92AA */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"); /* #B8E0F6 #A4CCE3 #37667E #DEC4D6 #7B92AA */
 
 * {
-    margin: 0;
-    padding: 0;
-    
+  margin: 0;
+  padding: 0;
 }
-body{
-    font-family: 'Montserrat', sans-serif;
-            text-align: center;
-    text-transform: capitalize;
-    color:white;
-  
+body {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
 }
-input{
-    
-    box-shadow:none;
+input {
+  box-shadow: none;
 }
-
-input:focus, textarea:focus, button:focus{
-    outline:none;
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
-ul{
-    list-style: none;
-}
-.App{
-    width: 70vw;
-    margin: 12vh 12vw;
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-gap: 2rem;
-    justify-items: center;
-    height: 70vh;
-
-}
-.not-active{
-    display: none;
+ul {
+  list-style: none;
 }
 
-.city1, .city2, .city3, .city4{
-    display: grid;
-    grid-template-rows: 20% 70% 10%;
-    align-items: center;
+.App {
+  width: 70vw;
+  margin: 12vh 12vw;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-gap: 2rem;
+  justify-items: center;
+  height: 70vh;
 }
 
-.city1-display,.city2-display,.city3-display,.city4-display{
-    display: grid;
-    grid-template-rows: 10% 90%;
-    border-radius: 8px;
-    padding: 1.5rem ;
+.city1,
+.city2,
+.city3,
+.city4 {
+  display: grid;
+  grid-template-rows: 20% 70% 10%;
+  align-items: center;
 }
 
-.input-city1, .input-city2, .input-city3, .input-city4{
-    border: none;
-    border-bottom: 1px solid white;
-    padding: .2rem;
-    margin: 0 .5rem;
-    max-width: 50%;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-            text-transform: capitalize;
+.city1-display,
+.city2-display,
+.city3-display,
+.city4-display {
+  display: grid;
+  grid-template-rows: 10% 90%;
+  border-radius: 8px;
+  padding: 1.5rem;
 }
 
-.btn-city1, .btn-city2, .btn-city3, .btn-city4{
-    border-radius: 5px;
-    padding: .2rem .5rem;
-    font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-}
-.btn-city1:hover, .btn-city2:hover, .btn-city3:hover, .btn-city4:hover{
-    opacity: .5;
+.input-city1,
+.input-city2,
+.input-city3,
+.input-city4 {
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 0.2rem;
+  margin: 0 0.5rem;
+  max-width: 50%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
 }
 
-.current-temp{
-    font-size: 3rem;
-
+.btn-city1,
+.btn-city2,
+.btn-city3,
+.btn-city4 {
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
-.temp-range{
-    display: grid;
-    grid-template-columns: 50% 50%;
+.btn-city1:hover,
+.btn-city2:hover,
+.btn-city3:hover,
+.btn-city4:hover {
+  opacity: 0.5;
+}
+.current-temp {
+  font-size: 3rem;
+}
+.temp-range {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+/* this class will be added according to the state:true/false */
+.not-active {
+  display: none;
 }
 
 /* details page css start */
 
-.details{
-    background-color: #D9D3D2;
-    width: 70vw;
-    margin: auto;
-    color: rgb(116, 116, 116);
-    display: grid;
-    grid-template-columns: 60% 40%;
-    align-items: center;
-    height: 70vh;
-    border-radius: 8px;
-
+.details {
+  background-color: #d9d3d2;
+  width: 70vw;
+  margin: auto;
+  color: rgb(116, 116, 116);
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  height: 70vh;
+  border-radius: 8px;
+  grid-column: 1/5;
 }
-.current-weather{
-    display: grid;
-    grid-template-rows: 20% 70% 10%;
-
+.current-weather {
+  display: grid;
+  grid-template-rows: 20% 70% 10%;
 }
-.btn-return{
-    background-color: transparent;
-    height: 3rem;
-    border: none;
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    font-size: 2rem;
-    color: #D9D3D2;
-    opacity: .5;
+.btn-return {
+  background-color: transparent;
+  height: 3rem;
+  border: none;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 2rem;
+  color: #d9d3d2;
+  opacity: 0.5;
 }
-.btn-return:hover{
-    opacity: 1;
+.btn-return:hover {
+  opacity: 1;
 }
-.forecast img{
-    max-width: 3rem;
+.forecast img {
+  max-width: 3rem;
 }
-.forecast-list{
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px dotted rgb(116, 116, 116);
-    align-items: flex-end;
-    width: 70%;
-    margin: auto;
-    padding: .5rem;
-
+.forecast-list {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px dotted rgb(116, 116, 116);
+  align-items: flex-end;
+  width: 70%;
+  margin: auto;
+  padding: 0.5rem;
 }
-.forecast-list p{
-    font-size: 1.8rem;
+.forecast-list p {
+  font-size: 1.8rem;
 }
 
 /* toggle button css start */
-.btn-nightmode{
-    background-color: transparent;
-    height: 3rem;
-    border: none;
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    font-size: 2rem;
-    color: #D9D3D2;
-    opacity: .5;
+.btn-nightmode {
+  background-color: transparent;
+  height: 3rem;
+  border: none;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 2rem;
+  color: #d9d3d2;
+  opacity: 0.5;
 }
-.btn-nightmode:hover{
-    opacity: 1;
+.btn-nightmode:hover {
+  opacity: 1;
+}
+
+/* media query start here */
+@media only screen and (max-width: 1024px) {
+  .App {
+    width: 90%;
+    grid-template-columns: repeat(4, 25%);
+    grid-gap: 1rem;
+    margin: 12vh 3%;
+  }
+  .details {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .App {
+    grid-template-columns: repeat(2, 50%);
+    margin: 12vh auto;
+  }
+
+  .details {
+    grid-column: 1/4;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .App {
+    width: 95%;
+    grid-template-columns: 100%;
+    grid-gap: 1rem;
+    margin: 4vh 0;
+    height: auto;
+  }
+  .city1-display,
+  .city2-display,
+  .city3-display,
+  .city4-display {
+    width: 80%;
+  }
+  .btn-nightmode {
+    height: auto;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .details {
+    grid-template-columns: 100%;
+    grid-column: 1/2;
+    padding: 1.5rem 0;
+  }
+
+  .btn-return {
+    height: auto;
+    top: 0.5rem;
+    right: 1.8rem;
+    font-size: 1.2rem;
+  }
 }

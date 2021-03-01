@@ -182,7 +182,7 @@ function App() {
             getShowDetails={getShowDetails}
           />
         ) : (
-          <img src={spinner} alt="loading..." />
+          <img className={showDetails ? "not-active" : ""} src={spinner} alt="loading..." />
         )}
 
         {typeof city2Weather.city_name != "undefined" ? (
@@ -201,7 +201,7 @@ function App() {
             getShowDetails={getShowDetails}
           />
         ) : (
-          <img src={spinner} alt="loading..." />
+          <img  className={showDetails ? "not-active" : ""} src={spinner} alt="loading..." />
         )}
 
         {typeof city3Weather.city_name != "undefined" ? (
@@ -220,7 +220,7 @@ function App() {
             getShowDetails={getShowDetails}
           />
         ) : (
-          <img src={spinner} alt="loading..." />
+          <img  className={showDetails ? "not-active" : ""} src={spinner} alt="loading..." />
         )}
 
         {typeof city4Weather.city_name != "undefined" ? (
@@ -239,7 +239,7 @@ function App() {
             getShowDetails={getShowDetails}
           />
         ) : (
-          <img src={spinner} alt="loading..." />
+          <img  className={showDetails ? "not-active" : ""} src={spinner} alt="loading..." />
         )}
       </div>
     </ThemeProvider>

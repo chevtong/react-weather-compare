@@ -34,24 +34,23 @@ function City1({
   };
 
   return (
-    <div         className={showDetails ? "not-active" : "city1-display"}>
-
-   
+    <div className={showDetails ? "not-active" : "city1-display"}>
       {showDetails ? (
         ""
       ) : (
-        <form >
+        <form>
           <input className="input-city1" ref={cityInput} type="text" />
-          <button onClick={(e) => updateCity(e)} className="btn-city1" type="submit">
+          <button
+            onClick={(e) => updateCity(e)}
+            className="btn-city1"
+            type="submit"
+          >
             Change
           </button>
         </form>
       )}
 
-      <div
-        onClick={() => getShowDetails(city1Weather)}
-        className= "city1"
-      >
+      <div onClick={() => getShowDetails(city1Weather)} className="city1">
         <div>
           <h2>{city1Weather.city_name}</h2>
           <Clock
@@ -72,10 +71,10 @@ function City1({
         </div>
         <div className="temp-range">
           <h4>
-          <i className="fas fa-chevron-up"></i> {highestTemp(city1Weather)}°c
+            <i className="fas fa-chevron-up"></i> {highestTemp(city1Weather)}°c
           </h4>
           <h4>
-          <i className="fas fa-chevron-down"></i> {lowestTemp(city1Weather)}°c
+            <i className="fas fa-chevron-down"></i> {lowestTemp(city1Weather)}°c
           </h4>
         </div>
       </div>

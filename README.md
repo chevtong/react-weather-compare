@@ -10,7 +10,7 @@ Nightmode is available for the application.
 ### WIP 
 
 1. catch error and add to display for no JSON response on wrong city names
-2. work on reponsivess of the app
+2. Add more weather info on the details page
 2. find out how to use styled-components efficiently for night mode
 
 ---
