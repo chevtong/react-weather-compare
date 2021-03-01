@@ -4,11 +4,12 @@ An application fetching API from [Weatherbit.io API](https://www.weatherbit.io/)
 
 Nightmode is available for the application.
 
-[Live Demo](https://chevtong.github.io/react-weather-compare/)
+## [Live Demo](https://chevtong.github.io/react-weather-compare/)
 
 ![](src/images/weather_app_demo.gif)
+<br>
+<br>
 
-<img src="src/images/weather_app_demo.gif" width="200" />
 
 ---
 ### WIP 
@@ -16,6 +17,8 @@ Nightmode is available for the application.
 1. catch error and add to display for no JSON response on wrong city names
 2. Add more weather info on the details page
 2. find out how to use styled-components efficiently for night mode
+<br>
+<br>
 
 ---
 
