@@ -120,8 +120,6 @@ ul{
 
 }
 .current-weather{
-    /* align-self: center; */
-    /*TODO: check the align self, should be becoz of the forecaste too long */
     display: grid;
     grid-template-rows: 20% 70% 10%;
 
