@@ -1,7 +1,10 @@
-import "./App.css";
+//React related imports
+import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./components/GlobalStyle";
 
-// import clouds from "./images/clouds.png";
+//Styling and image assets imports
+import "./App.css";
 import sun from "./images/sun.png";
 import rain from "./images/rain.png";
 import rainbow from "./images/rainbow.png";
@@ -9,18 +12,17 @@ import snow from "./images/snow.png";
 import lightening from "./images/lightening.png";
 import spinner from "./images/spinner.gif";
 
-import React, { useEffect, useState } from "react";
-
+//Component imports
 import City1 from "./components/City1";
 import City2 from "./components/City2";
 import City3 from "./components/City3";
 import City4 from "./components/City4";
 import List from "./components/List";
-import GlobalStyle from "./components/GlobalStyle";
 
 const APP_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
+
   const [city1, setCity1] = useState("brussels");
   const [city1Weather, setCity1Weather] = useState({});
 
@@ -37,10 +39,6 @@ function App() {
   const [detailWeather, setDetailWeather] = useState({});
 
   const [theme, setTheme] = useState({ mode: "light" });
-
-  const changeTheme = () => {
-    setTheme(theme.mode === "dark" ? { mode: "light" } : { mode: "dark" });
-  };
 
   const getCityWeather = async (cityNumber) => {
     try {
@@ -133,6 +131,11 @@ function App() {
     setShowDetails(showDetails ? false : true);
     setDetailWeather(weatherData);
   };
+
+  const changeTheme = () => {
+    setTheme(theme.mode === "dark" ? { mode: "light" } : { mode: "dark" });
+  };
+
 
   return (
     <ThemeProvider theme={theme}>

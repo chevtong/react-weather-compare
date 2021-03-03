@@ -14,8 +14,6 @@ function City1({
   getIcon,
   getShowDetails,
   showDetails,
-  //updateCity,
-  //cityInput
 }) {
   const cityInput = useRef();
 

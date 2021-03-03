@@ -43,7 +43,6 @@ body{
     background-color: ${(props) =>
       props.theme.mode === "dark" ? "#1e4258" : "#D9D3D2"};
 }
-
 `;
 
 export default GlobalStyle;

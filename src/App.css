@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"); /* #B8E0F6 #A4CCE3 #37667E #DEC4D6 #7B92AA */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
 * {
   margin: 0;
@@ -22,6 +22,7 @@ ul {
   list-style: none;
 }
 
+/* Specific styling for different components start here */
 .App {
   width: 70vw;
   margin: 12vh 12vw;
@@ -94,7 +95,6 @@ ul {
 }
 
 /* details page css start */
-
 .details {
   background-color: #d9d3d2;
   width: 70vw;
