@@ -1,10 +1,11 @@
 # Weather App in React
 
-An application fetching API from [Weatherbit.io API](https://www.weatherbit.io/) to show the weather information with 5-day forecasts. 4 default cities are shown on the landing page for a quick gaze for latest weather around the world. Users can also update the search according to their prefernces. 
 
-Nightmode is available for the application.
+An application fetching information from  [Weatherbit.io](https://www.weatherbit.io/) API to show the weather information with 5-day forecasts. 4 default cities are shown on the landing page for a quick gaze at the latest weather around the world. Users can also update the query according to their preferences.
+Night mode is available for the application.
 
-## [Live Demo](https://chevtong.github.io/react-weather-compare/)
+## [Visit the Live Page ](https://chevtong.github.io/react-weather-compare/)
+<br>
 
 ![](src/images/weather_app_demo.gif)
 <br>
@@ -24,8 +25,8 @@ Nightmode is available for the application.
 
 ### Tools
 - React
-- [react-live-clock](github.com/pvoznyuk/react-live-clock')
-- [styled-components](https://styled-components.com/)
+- [React-live-clock](github.com/pvoznyuk/react-live-clock')
+- [Styled-components](https://styled-components.com/)
 
 - [Weatherbit.io API](https://www.weatherbit.io/)
 
