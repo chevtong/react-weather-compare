@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 body{
     background-color: ${(props) =>
-      props.theme.mode === "dark" ? "#022140" : "white"};
+      props.theme.mode === "dark" ? "#022140" : "#f7f7f7"};
     color: ${(props) => (props.theme.mode === "dark" ? "#adadad" : "white")};
 }
 
