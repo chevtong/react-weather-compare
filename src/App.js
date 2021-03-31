@@ -140,15 +140,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {theme.mode === "dark" ? (
-        <button onClick={changeTheme} className="btn-nightmode">
-          <i className="fas fa-toggle-on"></i>
-        </button>
-      ) : (
-        <button onClick={changeTheme} className="btn-nightmode">
-          <i className="fas fa-toggle-off"></i>
-        </button>
-      )}
+      
       
       <div className="App">
         {showDetails ? (
@@ -245,6 +237,15 @@ function App() {
           <img  className={showDetails ? "not-active" : ""} src={spinner} alt="loading..." />
         )}
       </div>
+      {theme.mode === "dark" ? (
+        <button onClick={changeTheme} className="btn-nightmode">
+          <i className="fas fa-toggle-on"></i>
+        </button>
+      ) : (
+        <button onClick={changeTheme} className="btn-nightmode">
+          <i className="fas fa-toggle-off"></i>
+        </button>
+      )}
     </ThemeProvider>
   );
 }
