@@ -8,7 +8,6 @@ function List({
   currentTemp,
   getDescription,
   getIcon,
-  showDetails,
   setShowDetails,
   detailWeather,
   setDetailWeather,

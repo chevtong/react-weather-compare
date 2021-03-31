@@ -145,7 +145,6 @@ function App() {
       <div className="App">
         {showDetails ? (
           <List
-            showDetails={showDetails}
             getIcon={getIcon}
             getDescription={getDescription}
             detailWeather={detailWeather}

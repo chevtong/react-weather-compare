@@ -13,11 +13,12 @@ Night mode is available for the application.
 
 
 ---
-### WIP 
+### Things still working on
 
-1. catch error and add to display for no JSON response on wrong city names
+1. Display if no API response on incorrect city names
+2. Add search suggestion when user type in the city names
 2. Add more weather info on the details page
-2. find out how to use styled-components efficiently for night mode
+2. Learn more on how to use styled-components efficiently for night mode
 <br>
 <br>
 
